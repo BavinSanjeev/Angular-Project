@@ -1,0 +1,13 @@
+<h3>List of Component</h3>
+<div *ngIf="cars.length>0; then dataisthere ; else nodata"></div>
+
+<ng-template #dataisthere>
+<ul>
+    <li *ngFor="let carName of cars">{{carName}}</li>
+</ul>
+
+</ng-template>
+<ng-template #nodata>
+    <p>No Data Available</p>
+</ng-template>
+

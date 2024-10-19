@@ -1,0 +1,29 @@
+<h1> {{name}}</h1>
+<br>
+<input type="text" [(ngModel)]="name">
+
+<h2>{{getTitle()}}</h2>
+
+<button  [disabled]="isDisabled">Click Me [Property Binding ]</button>
+<p>{{clickCount}}</p>
+<button (click)="clickC()">Click me [Event Binding]</button>
+<br>
+Type Your Name : <input type="text" (input)="handleInput($event); value1 =$any($event.target).value">
+<p>Without Handle Input     :{{value1}}</p>
+<p>With Handle Input   :{{value}}</p>
+
+<input type="checkbox" [(ngModel)]="enabledRed">
+<div [ngClass]="{'primary': enabledRed}"> Sample Text</div>
+<div [ngStyle] = "
+{
+    'color':'purple',
+    'font-weight' : 'bold',
+    'font-size': '50px'
+}"
+>A Bavin Sanjeev</div>
+
+COLOR
+<input type="text" [(ngModel)] = "color">
+<div [ngStyle]="{
+  'backgroundColor': color
+}">Sample</div>
