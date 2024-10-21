@@ -1,0 +1,26 @@
+<h3>Select your favorite fruit:</h3>
+<select [(ngModel)]="selectedFruit" (change)="onSelectionChange($event)">
+    <option *ngFor="let fruit of fruits" [ngValue] = fruit>{{fruit}}</option>
+</select>
+<p>Selected Value {{selectedFruit}}</p>
+
+
+<h3>Select a Car : </h3>
+<select [(ngModel)]="selectedCar" (change)="oncarSelection($event)">
+    <option *ngFor="let car of cars" [ngValue]="car">{{car.name}}</option>
+
+</select>
+<p>Selected Name : {{selectedCar.name}}</p>
+<p>Selected Brand : {{selectedCar.brand}}</p>
+
+
+<h5>Reactive Forms with Drop-down List</h5>
+
+<form [formGroup]="carsForm">
+    <h3>Select a car Model : </h3>
+     <select formControlName="selecteddCar">
+        <option *ngFor="let ncar of ncars" [ngValue]="ncar">{{ncar.brand}}</option>
+     </select>
+</form>
+
+<p>You Selected :  {{carsForm.get('selecteddCar')?.value?.name}}</p>
